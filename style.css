@@ -1,0 +1,198 @@
+/*css stylesheet for netflix.*/
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html, body {
+    width: 100%;
+    height: 100%;
+}
+
+body::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0.75;
+    background: url("image/avengers.jpeg") no-repeat center center / cover;
+    z-index: 0;
+}
+
+nav {
+    position: fixed;
+    padding: 25px 60px;
+    z-index: 1;
+}
+
+nav a svg {
+    width: 167px;
+    fill: #e50714;
+}
+
+.form-wrapper {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 2;
+    border-radius: 20px;
+    background-color: rgba(0, 0, 0, 0.75);
+    padding: 20px;
+    width: 450px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 1);
+}
+
+.form-wrapper h1 {
+    color: #fff;
+    font-size: 2rem;
+}
+
+.form-wrapper form {
+    margin: 25px 0 60px;
+}
+
+form .control {
+    height: 50px;
+    position: relative;
+    margin-bottom: 16px;
+}
+
+.control input {
+    height: 100%;
+    width: 100%;
+    background: #333;
+    border: none;
+    outline: none;
+    border-radius: 4px;
+    color: #fff;
+    font-size: 1rem;
+    padding: 0 20px;
+}
+
+.control input:is(:focus, :valid) {
+    background: #444;
+    padding: 16px 20px 0;
+}
+
+.control label {
+    position: absolute;
+    left: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 1rem;
+    pointer-events: none;
+    color: #8c8c8c;
+    transition: all 0.5s ease;
+}
+
+.control input:is(:focus, :valid) ~ label {
+    font-size: 0.75rem;
+    transform: translateY(-130%);
+}
+
+form button {
+    width: 100%;
+    padding: 10px 0;
+    font-size: 1rem;
+    background: #e50914;
+    color: white;
+    font-weight: 500;
+    cursor: pointer;
+    border-radius: 4px;
+    border: none;
+    outline: none;
+    margin: 25px 0 10px;
+    transition: 0.1s ease;
+}
+
+form button:hover {
+    background: #c40812;
+}
+
+.form-wrapper a {
+    text-decoration: none;
+}
+
+.form-wrapper a:hover {
+    text-decoration: underline;
+}
+
+.form-wrapper :where(label, p, small, a) {
+    color: #b3b3b3;
+}
+
+form .form-help {
+    display: flex;
+    justify-content: space-between;
+}
+
+.form-help a {
+    color: #fff;
+}
+
+form .remember-me {
+    display: flex;
+}
+
+form .remember-me input {
+    margin-right: 5px;
+    accent-color: #b3b3b3;
+}
+
+form .form-help :where(label, a) {
+    font-size: 0.9rem;
+}
+
+.form-wrapper p a {
+    color: #fff;
+}
+
+.form-wrapper small {
+    display: block;
+    margin-top: 15px;
+    color: #b3b3b3;
+}
+
+.form-wrapper small a {
+    color: #0071eb;
+}
+
+/* ✅ Fixed media query syntax */
+@media only screen and (max-width: 500px) {
+    body::before {
+        display: none;
+    }
+
+    nav, .form-wrapper {
+        padding: 28px;
+    }
+     nav {
+       
+        z-index:10 ;
+    }
+
+    nav a svg {
+        
+        width: 140px;
+       
+    }
+
+    .form-wrapper {
+        width: 100%;
+        height:100%;
+        
+        box-shadow: none;
+    }
+
+    .form-wrapper form {
+        margin: 25px 0 40px;
+    }
+
+    .form-wrapper h1 {
+        margin-top: 60px;
+    }
+}
